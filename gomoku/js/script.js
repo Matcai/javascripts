@@ -1,5 +1,6 @@
 
 var chess = document.getElementById("chess");
+var newGame = document.getElementById("new-game");
 var context = chess.getContext("2d");
 
 var me = true;
@@ -249,5 +250,13 @@ var computerAI = function(){
     checkWin(u, v, false);
     if (!over){
 	me = !me;
+    }
+}
+
+
+newGame.onclick = function(){
+    var i = window.confirm("确定开始新游戏？");
+    if (i) {
+	window.location.reload();
     }
 }
